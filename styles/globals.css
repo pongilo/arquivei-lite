@@ -1,9 +1,31 @@
-html,
-body {
-  padding: 0;
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
+
+:root {
+  --color-primary: #4076FA;
+  --color-primary-hover: #2B55BD;
+
+  --color-white: #FFFFFF;
+  --color-grey-100: #F3F3F3;
+  --color-grey-200: #D8D8D8;
+  --color-grey-300: #BFBFBF;
+  --color-grey-400: #A7A7A7;
+  --color-dark: #001634;
+  --color-extra-dark: #091223;
+
+  --color-tag-background-success: #AFFFC3;
+  --color-tag-text-success: #002F0B;
+
+  --color-error: #F15025;
+}
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--color-grey-100);
 }
 
 a {
@@ -11,6 +33,85 @@ a {
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
+body,
+input,
+button,
+textarea {
+  font-family: 'Rubik', sans-serif;
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.625rem; /* 26px */
+  color: var(--color-grey-400);
+}
+
+::placeholder {
+  color: var(--color-grey-300);
+}
+
+.hero {
+  font-weight: 700;
+  font-size: 2.625rem; /* 42px */
+  line-height: 3.250rem; /* 52px */
+  color: var(--color-extra-dark);
+}
+
+.title {
+  font-weight: 500;
+  font-size: 1.375rem; /* 22px */
+  color: var(--color-extra-dark);
+}
+
+.card {
+  display: block;
+  background: var(--color-white);
+  box-shadow: 0 4px 16px -8px rgba(0, 0, 0, 0.5);
+  border-radius: .5rem;
+}
+
+.card-hover {
+  transition-duration: .3s;
+}
+
+@media (pointer: fine) {
+  .card-hover:hover {
+    box-shadow: 0 32px 24px -16px rgba(0, 0, 0, 0.4);
+  }
+}
+
+.tag {
+  display: inline-block;
+  color: var(--color-tag-text-success);
+  background: var(--color-tag-background-success);
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1rem;
+  padding: .5rem 0.750rem;
+  border-radius: .25rem;
+}
+
+.btn-primary {
+  display: inline-block;
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-weight: 700;
+  font-size: 0.875rem;
+  line-height: 1rem;
+  text-decoration: none;
+  padding: .750rem 2rem;
+  border: none;
+  border-radius: 1.250rem;
+  outline: none;
+  cursor: pointer;
+  transition-duration: .15s;
+}
+
+.btn-disabled {
+  pointer-events: none;
+  opacity: .32;
+  cursor: not-allowed;
+}
+
+@media (pointer: fine) {
+  .btn-primary:hover {
+    background: var(--color-primary-hover);
+  }
 }
